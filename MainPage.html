@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> My Page </title>
+    <link rel = "stylesheet" href = "CSS/CssCode.css" </link>
+    <style>
+      h1 {text-align: center;}
+    </style>
+  </head>
+  <body>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href = "AboutMe.html"> About Me </a>
+      <br>
+      <a href = "MyProjects.html"> Projects </a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Welcome to my Page </span>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+    <h1> Hello and welcome to my page here I will be putting some of my projects that you can even download and run to learn
+      about programming. Enjoy ;)
+      <img src="https://media3.giphy.com/media/snpENu20kUrTESS3ko/giphy.gif" alt= "Panda" style="width:1100px;height:700px;">
+    </h1>
+
+
+
+</html>
