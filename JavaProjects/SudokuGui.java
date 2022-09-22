@@ -20,6 +20,7 @@ public class SudokuGui {
  	   int num, y;
 
      int a = 0;
+     //User will be asked to enter numbers row by row
      for(int x = 1; x <= 9; x++){
        y=0;
        row = JOptionPane.showInputDialog("Enter numbers in row #" + x +" separated by a space if number not given enter 0");
@@ -30,24 +31,26 @@ public class SudokuGui {
            y++;
          }
      }
+     //Will try to solve board if true it will print board else Sudoku is unsolvable
      if(solve(board)){
        showOutput(printBoard(board));
      }
      else{
-       showOutput(printBoard(board));
-       //showOutput("Sudoku Board is unsolvable");
+       //showOutput(printBoard(board));
+       showOutput("Sudoku Board is unsolvable");
      }
      System.exit(0);
    }
 
 
-
-   void showOutput(String a){
+   //prints output
+   public void showOutput(String a){
      //UIManager.put("OptionPane.minimumSize",new Dimension(500,500));
      JOptionPane.showMessageDialog(null, a , "Results", JOptionPane.PLAIN_MESSAGE );
    }
-
-   boolean isNumbInRow(int[][] board , int number, int row){
+   
+   //checks if number is in row
+   public boolean isNumbInRow(int[][] board , int number, int row){
      for(int x = 0; x < size; x++){
        if(board[row][x] == number){
          return true;
@@ -55,7 +58,8 @@ public class SudokuGui {
      }
      return false;
    }
-
+   
+   //checks if number is in column
    public boolean isNumbInCol(int[][] board , int number, int col){
      for(int x = 0; x < size; x++){
        if(board[x][col] == number){
@@ -64,7 +68,7 @@ public class SudokuGui {
      }
      return false;
    }
-
+   // checks if number is in Box
    public boolean isNumbInBox(int[][] board , int number, int row, int col){
      int row2 = row - (row%3);
      int col2 = col - (col%3);
@@ -78,13 +82,14 @@ public class SudokuGui {
      }
      return false;
    }
-
+   //checks if location of number is good
    public boolean Location(int[][] board , int number, int row, int col){
      return !isNumbInRow(board, number, row) &&
          !isNumbInCol(board,number, col) &&
          !isNumbInBox(board, number, row, col);
    }
 
+   //solves board
    public boolean solve(int[][] board){
      for(int row = 0; row < size; row++){
        for(int col = 0; col < size; col++){
@@ -106,7 +111,8 @@ public class SudokuGui {
      }
      return true;
    }
-
+   
+   //this will make the board that will be displayed board
    public String printBoard(int[][] board){
      String a = "";
      for(int row = 0; row < size; row++){
