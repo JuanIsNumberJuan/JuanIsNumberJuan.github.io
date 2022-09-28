@@ -1,0 +1,514 @@
+/**************************************
+		Main Entities
+**************************************/
+CREATE TABLE os (
+	osID varchar(25),
+	osType varchar(25),
+	primary key (osID)
+    
+);
+
+CREATE TABLE manufacturer (
+	manufacturerID int,
+    osID varchar(25),
+    manufacturerName varchar(50),
+    
+    primary key (manufacturerID,osID),
+    
+    foreign key (osID)
+		references os(osID)
+);
+
+CREATE TABLE phone (
+    modelName varchar(50),
+    manufacturerID int,
+    capacity varchar(50),
+    price decimal,
+
+    primary key (modelName,manufacturerID),
+    
+    foreign key (manufacturerID)
+		references manufacturer(manufacturerID)
+);
+CREATE TABLE provider (
+	providerID int,
+    modelName varchar(50),
+	providerName varchar(25),
+
+	primary key (providerID,modelName),
+    
+    constraint foreign key (modelName)
+		references phone(modelName)
+);
+
+CREATE TABLE plan (
+	planID int,
+    providerID int,
+    planRate decimal,
+    numOfLines int, 
+    planDescription varchar(75),
+    
+    primary key (planID,providerID),
+    
+    foreign key (providerID)
+		references provider(providerID)
+);
+
+CREATE TABLE customer (
+	customerID int,
+    firstName varchar(50),
+    lastName varchar(50),
+    dateOfBirth varchar(50),
+    
+    primary key (customerID)
+    
+);
+
+CREATE TABLE customerPlan (
+	customerID int,
+    planID int, 
+    timeActivated timestamp,
+	
+    primary key (customerID, planID),
+    
+    foreign key (customerID)
+		references customer(customerID),
+	foreign key (planID)
+		references plan(planID)
+);
+
+
+
+/**************************************
+		Info (OS)
+**************************************/
+INSERT INTO os VALUES
+	('1','iOS');
+INSERT INTO os VALUES
+	('2','Android');
+
+/**************************************
+		Info (manufacturer)
+**************************************/
+INSERT INTO manufacturer VALUES
+	(1,'1','Apple');
+INSERT INTO manufacturer VALUES
+	(2,'2','Samsung');
+INSERT INTO manufacturer VALUES
+	(3,'2','Google');
+INSERT INTO manufacturer VALUES
+	(4,'2','LG');
+INSERT INTO manufacturer VALUES
+	(5,'2','Motorola');
+INSERT INTO manufacturer VALUES
+	(6,'2','Sony');
+INSERT INTO manufacturer VALUES
+	(7,'2','OnePlus');
+INSERT INTO manufacturer VALUES
+	(8,'2','Huawei');
+
+/**************************************
+		Info (customer)
+**************************************/
+INSERT INTO customer VALUES
+	(1,'Mike','Rich','4-5-1990');
+INSERT INTO customer VALUES
+	(2,'Brian','Smith','12-2-1993');
+INSERT INTO customer VALUES
+	(3,'Simon','Yang','11-9-2001');
+INSERT INTO customer VALUES
+	(4,'Kyle','Peterson','5-12-2000');
+INSERT INTO customer VALUES
+	(5,'Alex','William','7-12-1998');
+INSERT INTO customer VALUES
+	(6,'David','Mazda','4-2-1956');
+INSERT INTO customer VALUES
+	(7,'Juan','Will','8-11-2003');
+INSERT INTO customer VALUES
+	(8,'Lee','Brown','5-6-2002');
+INSERT INTO customer VALUES
+	(9,'Kevin','Heart','10-2-1999');
+INSERT INTO customer VALUES
+	(10,'Steve','Smith','6-2-1978');
+
+
+/**************************************
+		Info (phone)
+**************************************/
+
+INSERT INTO phone VALUES
+	('iPhone X', '1', '64 GB', '219.99');
+INSERT INTO phone VALUES
+	('iPhone 13 Pro Max', '1', '512 GB', '1399.00');    
+INSERT INTO phone VALUES
+	('iPhone 13', '1', '128 GB', '829.00');
+INSERT INTO phone VALUES
+	('Galaxy S22+', '2', '256 GB', '1049.99');
+INSERT INTO phone VALUES
+	('Galaxy S22', '2', '256 GB', '849.99');
+INSERT INTO phone VALUES
+	('Galaxy S22 Ultra', '2', '1 TB', '1599.99');
+INSERT INTO phone VALUES
+	('Galaxy Z Flip3 5G', '2', '256 GB', '1049.99');
+INSERT INTO phone VALUES
+	('Galaxy Z Fold3 5G', '2', '512 GB', '2149.99');
+INSERT INTO phone VALUES
+	('Pixel 6', '3', '128 GB', '599.00');
+INSERT INTO phone VALUES
+	('Pixel 6 Pro', '3', '512 GB', '1099.00');
+INSERT INTO phone VALUES
+	('LG G8X ThinQ Dual Screen', '4', '128 GB', '949.99');
+INSERT INTO phone VALUES
+	('LG G8 ThinQ', '4', '128 GB', '849.99');
+INSERT INTO phone VALUES
+	('edge+', '5', '512 GB', '999.99');
+INSERT INTO phone VALUES
+	('razr', '5', '256 GB', '1399.99');
+INSERT INTO phone VALUES
+	('moto g stylus', '5', '128 GB', '299.99');
+INSERT INTO phone VALUES
+	('Xperia PRO-I', '6', '512 GB', '1799.99');
+INSERT INTO phone VALUES
+	('Xperia 5 III', '6', '128 GB', '999.99');
+INSERT INTO phone VALUES
+	('Xperia 1 III', '6', '256 GB', '1299.99');
+INSERT INTO phone VALUES
+	('Xperia PRO', '6', '512 GB', '2499.99');
+INSERT INTO phone VALUES
+	('OnePlus 10 Pro 5G', '7', '128 GB', '899.00');
+INSERT INTO phone VALUES
+	('P50 Pocket Dual Premium Edition', '8', '512 GB', '1789.00');
+INSERT INTO phone VALUES
+	('P50 Pro', '8', '256 GB', '987.00');
+
+/**************************************
+		Info (provider)
+**************************************/
+
+INSERT INTO provider VALUES
+	('1', 'iPhone X', 'Verizon');
+INSERT INTO provider VALUES
+	('1', 'iPhone 13 Pro Max', 'Verizon');    
+INSERT INTO provider VALUES
+	('2', 'iPhone 13', 'AT&T');
+INSERT INTO provider VALUES
+	('2', 'Galaxy S22+', 'AT&T');
+INSERT INTO provider VALUES
+	('1', 'Galaxy S22', 'Verizon');
+INSERT INTO provider VALUES
+	('3', 'Galaxy S22 Ultra', 'T Mobile');
+INSERT INTO provider VALUES
+	('3', 'Galaxy Z Flip3 5G', 'T Mobile');
+INSERT INTO provider VALUES
+	('4', 'Galaxy Z Fold3 5G', 'Google Fi');
+INSERT INTO provider VALUES
+	('2', 'Pixel 6', 'AT&T');
+INSERT INTO provider VALUES
+	('5', 'Pixel 6 Pro', 'Boost Mobile');
+INSERT INTO provider VALUES
+	('3', 'LG G8X ThinQ Dual Screen', 'T Mobile');
+INSERT INTO provider VALUES
+	('4', 'LG G8 ThinQ', 'Google Fi');
+INSERT INTO provider VALUES
+	('4', 'edge+', 'Google Fi');
+INSERT INTO provider VALUES
+	('5', 'razr', 'Boost Mobile');
+INSERT INTO provider VALUES
+	('5', 'moto g stylus', 'Boost Mobile');
+INSERT INTO provider VALUES
+	('1', 'Xperia PRO-I', 'Verizon');
+INSERT INTO provider VALUES
+	('2', 'Xperia 5 III', 'AT&T');
+INSERT INTO provider VALUES
+	('4', 'Xperia 1 III', 'Google Fi');
+INSERT INTO provider VALUES
+	('1', 'Xperia PRO', 'Verizon');
+INSERT INTO provider VALUES
+	('3', 'OnePlus 10 Pro 5G', 'T Mobile');
+INSERT INTO provider VALUES
+	('4', 'P50 Pocket Dual Premium Edition', 'Google Fi');
+INSERT INTO provider VALUES
+	('4', 'P50 Pro', 'Google Fi');
+
+
+/**************************************
+		Info (plan)
+**************************************/
+
+INSERT INTO plan VALUES
+	('1', '1', '80', '1', 'Unlimited calls, text, and data');
+INSERT INTO plan VALUES
+	('2', '2', '70', '1', 'Unlimited calls, text, and data');    
+INSERT INTO plan VALUES
+	('3', '3', '65', '1', 'Unlimited calls, text, and data');
+INSERT INTO plan VALUES
+	('4', '4', '70', '1', 'Unlimited calls, text, and data');
+INSERT INTO plan VALUES
+	('5', '1', '70', '1', 'Unlimited calls and text with 20 GB of data per month');
+INSERT INTO plan VALUES
+	('6', '2', '60', '1', 'Unlimited calls and text with 20 GB of data per month');
+INSERT INTO plan VALUES
+	('7', '3', '60', '1', 'Unlimited calls and text with 20 GB of data per month');
+INSERT INTO plan VALUES
+	('8', '4', '65', '1', 'Unlimited calls and text with 20 GB of data per month');
+INSERT INTO plan VALUES
+	('9', '5', '60', '1', 'Unlimited calls and text with 20 GB of data per month');
+INSERT INTO plan VALUES
+	('10', '1', '65', '1', 'Unlimited calls and text with 10 GB of data per month');
+INSERT INTO plan VALUES
+	('11', '2', '55', '1', 'Unlimited calls and text with 10 GB of data per month');
+INSERT INTO plan VALUES
+	('12', '3', '50', '1', 'Unlimited calls and text with 10 GB of data per month');
+INSERT INTO plan VALUES
+	('13', '5', '50', '1', 'Unlimited calls and text with 10 GB of data per month');
+INSERT INTO plan VALUES
+	('14', '1', '45', '1', 'Unlimited calls and text with no data');
+INSERT INTO plan VALUES
+	('15', '2', '45', '1', 'Unlimited calls and text with no data');
+INSERT INTO plan VALUES
+	('16', '5', '40', '1', 'Unlimited calls and text with no data');
+INSERT INTO plan VALUES
+	('17', '1', '150', '3', 'Family Plan with 20 GB shared data per month');
+INSERT INTO plan VALUES
+	('18', '2', '150', '3', 'Family Plan with 20 GB shared data per month');
+INSERT INTO plan VALUES
+	('19', '3', '130', '3', 'Family Plan with 20 GB shared data per month');
+INSERT INTO plan VALUES
+	('20', '4', '140', '3', 'Family Plan with 20 GB shared data per month');
+
+/**************************************
+		Info (customerplan)
+**************************************/
+
+INSERT INTO customerplan VALUES
+	('1', '2', '2021-06-12 13:00:16');
+INSERT INTO customerplan VALUES
+	('2', '1', '2022-01-10 11:55:23');
+INSERT INTO customerplan VALUES
+	('3', '5', '2022-02-23 12:01:01');
+INSERT INTO customerplan VALUES
+	('4', '10', '2019-10-10 10:10:10');
+INSERT INTO customerplan VALUES
+	('5', '8', '2020-11-01 05:59:59');
+INSERT INTO customerplan VALUES
+	('6', '17', '2021-06-26 15:23:00');
+INSERT INTO customerplan VALUES
+	('7', '9', '2022-03-14 03:14:16');
+INSERT INTO customerplan VALUES
+	('8', '15', '2021-12-24 14:30:00');
+INSERT INTO customerplan VALUES
+	('9', '3', '2021-11-28 10:01:30');
+INSERT INTO customerplan VALUES
+	('10', '1', '2018-01-07 11:45:55');
+
+
+
+
+/**************************************
+		Join Operation #1
+Customer info their phone and provider
+**************************************/
+select customer.firstName, lastName, dateOfBirth, Provider.providerName, modelName
+	from customer join customerplan
+		using (customerID)
+        join plan
+        using (planID)
+        join provider
+        using(providerID)
+        order by providerName;
+
+
+/**************************************
+		Join Operation #2
+Information about phone including manufacturer and os type
+**************************************/
+select Phone.modelName, capacity, price, Manufacturer.manufacturerName, OS.osType
+	from phone join manufacturer
+		using (manufacturerID)
+        join os
+        using (osID)
+        order by manufacturerName;
+
+
+/**************************************
+		Join Operation #3
+Prints out all theIphones we have for sale.
+**************************************/
+
+select modelName, price, capacity
+	from os join manufacturer
+		using (osID)
+        join phone
+        using (manufacturerID)
+        where osID = 1;
+
+
+
+
+
+
+
+
+/**************************************
+Looking for a specific customer and phones and plans they have active		
+Join Operation #4
+**************************************/
+select customer.firstName, lastName,  Provider.providerName, modelName, numOfLines 
+    from customer join customerplan
+		using (customerID)
+        join plan
+        using (planID)
+        join provider
+        using(providerID)
+		where customerID = 2;
+        
+
+	
+
+
+
+
+
+/**************************************
+		Join Operation #5
+Looking at every customer and their monthly payment
+**************************************/
+
+
+
+select customer.firstName, lastName, (numOfLines * planRate) as TotalMonthlyPayment
+    from customer join customerplan
+		using (customerID)
+        join plan
+        using (planID);
+        
+
+/**************************************
+		Query #1
+Check provider and phones
+**************************************/
+select Provider.providerName, Phone.modelName, capacity, price
+	from phone, provider
+		where provider.modelName = phone.modelName
+			order by provider.providerName;
+
+
+/**************************************
+		Query #2
+Check price from high to low and low to high
+**************************************/
+select Phone.modelName, capacity, price
+	from phone
+        order by phone.price desc;
+
+select Phone.modelName, capacity, price
+	from phone
+        order by phone.price;
+
+
+/**************************************
+		Query #3
+Check which customer was born in a certain year
+**************************************/
+select Customer.firstName, lastName, dateOfBirth
+	from customer
+		where dateofBirth like '%2000'
+			order by dateOfBirth;
+
+
+/**************************************
+		Query #4
+Check provider and plan they offer
+**************************************/
+select Distinct provider.providerName, plan.planRate, plandescription
+	from Provider, Plan
+		where
+			provider.providerID = plan.providerid
+		order by providerName, planRate;
+
+
+/**************************************
+		Query #5
+Check what phones a customer has
+**************************************/
+select distinct Customer.firstName, lastName, phone.modelName
+	from customer, customerplan, plan, provider, phone
+		where customer.customerID = customerplan.customerID
+        and customerplan.planID = plan.planID 
+        and plan.providerID = provider.providerID
+        and provider.modelName = phone.modelName
+        order by lastName, firstName;
+
+/**************************************
+		Query #6
+Check os Type for each Manufacturer
+**************************************/
+select distinct Manufacturer.ManufacturerName, os.osType
+	from Manufacturer, os
+		where Manufacturer.osID = os.osID
+		order by ManufacturerName;
+/**************************************
+		Query #7
+Outputs customer name what plan
+they got, from which provider and 
+at what time
+**************************************/
+select Customer.lastName, firstName, Plan.planDescription, Provider.providerName, CustomerPlan.timeActivated
+	from Customer, CustomerPlan, Plan, Provider
+		where Customer.customerID = customerPlan.customerID
+        and customerplan.planID = plan.planID
+        and plan.providerID = provider.providerID
+        order by lastName;
+
+
+/**************************************
+		Query #8
+Gives phones ranging from a certain price
+and orders them from lowest to highest and
+vice versa
+**************************************/
+ select Phone.modelName, capacity, price
+	from phone
+		where price > 500
+        and price < 1000
+        order by price;
+        
+        
+ select Phone.modelName, capacity, price
+	from phone
+		where price > 500
+        and price < 1000
+        order by price desc;
+
+/**************************************
+		Query #9
+Gives phone with a certain amount of capacity
+and output them from lowest to highest and vice
+versa
+**************************************/
+
+ select Phone.modelName, capacity, price
+	from phone
+		where capacity = "512 GB"
+        order by price desc;
+        
+ select Phone.modelName, capacity, price
+	from phone
+		where capacity = "512 GB"
+        order by price;
+
+
+
+/**************************************
+		Query #10
+Total price of all phones purchased by customer
+**************************************/
+select Customer.lastName, firstName, sum(Phone.price) TotalPhonePrice
+	from Customer, CustomerPlan, Plan, Provider, Phone
+		where Customer.customerID = customerPlan.customerID
+        and customerPlan.planID = Plan.planID
+        and Plan.providerID = Provider.providerID
+        and provider.modelName = phone.modelName
+        group by lastName, firstName
+        order by lastName;
+
