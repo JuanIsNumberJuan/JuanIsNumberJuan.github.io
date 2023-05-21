@@ -1,0 +1,136 @@
+create table Account(
+	UserName varchar(40) not null,
+    PassWrd varchar(40) not null,
+    RealName varchar(40) not null,
+    Address varchar(100) not null,
+    PhoneNumber varchar(20) not null,
+    Device varchar(40) not null,
+    Authentication1 varchar(40) not null,
+    Authentication2 varchar(40) not null,
+    Authentication3 varchar(40) not null,
+    Authentication4 varchar(40) not null,
+    Authentication5 varchar(40) not null,
+    
+    
+    constraint primary key(UserName)
+);
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user1","password1","bob1", "Dominguez Hills, ", "111-111-1111", "Laptop1", "Password",
+"null", "null", "null", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user2","password2","bob2", "Dominguez Hills, ", "222-222-2222", "Laptop2", "Password",
+"Text-Message", "null", "null", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user3","password3","bob3", "Dominguez Hills, ", "333-333-3333", "Laptop3", "Password",
+"Text-Message", "Location", "null", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user4","password4","bob4", "Dominguez Hills, ", "444-444-4444", "Laptop4", "Password",
+"Text-Message", "Location", "DeviceID", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user5","password5","bob5", "Dominguez Hills, ", "555-555-5555", "Laptop5", "Password",
+"Text-Message", "Location", "DeviceID", "Facial Recognition");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user6","password6","bob6", "Dominguez Hills, ", "666-666-6666", "Laptop6", "Password",
+"Text-Message", "Location", "DeviceID", "Fingerprint scan");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user7","password7","bob7", "Dominguez Hills, ", "777-777-7777", "Laptop7", "Password",
+"Text-Message", "DeviceID", "Fingerprint scan", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user8","password8","bob8", "Dominguez Hills, ", "888-888-8888", "Laptop8", "Password",
+"Text-Message", "DeviceID", "Facial Recognition", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user9","password9","bob9", "Dominguez Hills, ", "999-999-9999", "Laptop9", "Password",
+"Text-Message", "DeviceID", "Facial Recognition", "Fingerprint Scan");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user10","password10","bob10", "Dominguez Hills, ", "101-010-1010", "Laptop10", "Password",
+"Text-Message", "Location", "Facial Recognition", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user11","password11","bob11", "Dominguez Hills, ", "111-111-1111", "Laptop11", "Password",
+"Text-Message", "Location", "Fingerprint scan", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user12","password12","bob12", "Dominguez Hills, ", "121-212-1212", "Laptop12", "Password",
+"Text-Message", "Location", "Fingerprint scan", "Facial Recognition");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user13","password13","bob13", "Dominguez Hills, ", "131-313-1313", "Laptop13", "Password",
+"Text-Message", "App", "null", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user14","password14","bob14", "Dominguez Hills, ", "141-414-1414", "Laptop14", "Password",
+"Text-Message", "App", "DeviceID", "Location");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user15","password15","bob15", "Dominguez Hills, ", "151-515-1515", "Laptop15", "Password",
+"Text-Message", "App", "DeviceID", "Facial Recognition");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user16","password16","bob16", "Dominguez Hills, ", "161-616-1616", "Laptop16", "Password",
+"Text-Message", "App", "DeviceID", "Fingerprint scan");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user17","password17","bob17", "Dominguez Hills, ", "171-717-1717", "Laptop17", "Password",
+"Text-Message", "App", "Location", "Facial Recognition");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user18","password18","bob18", "Dominguez Hills, ", "181-818-1818", "Laptop18", "Password",
+"Text-Message", "App", "Location", "Fingerprint scan");
+
+
+
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user19","password19","bob19", "Dominguez Hills, ", "191-919-1919", "Laptop19", "Password",
+"App", "null", "null", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user20","password20","bob20", "Dominguez Hills, ", "202-020-2020", "Laptop20", "Password",
+"App", "Location", "null", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user21","password21","bob21", "Dominguez Hills, ", "212-121-2121", "Laptop21", "Password",
+"App", "Location", "DeviceID", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user22","password22","bob22", "Dominguez Hills, ", "222-222-2222", "Laptop22", "Password",
+"App", "Location", "DeviceID", "Facial Recognition");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user23","password23","bob23", "Dominguez Hills, ", "232-323-2323", "Laptop23", "Password",
+"App", "Location", "DeviceID", "Fingerprint scan");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user24","password24","bob24", "Dominguez Hills, ", "242-424-2424", "Laptop24", "Password",
+"App", "DeviceID", "Fingerprint scan", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user25","password25","bob25", "Dominguez Hills, ", "252-525-2525", "Laptop25", "Password",
+"App", "DeviceID", "Facial Recognition", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user26","password26","bob26", "Dominguez Hills, ", "262-626-2626", "Laptop26", "Password",
+"App", "DeviceID", "Facial Recognition", "Fingerprint Scan");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user27","password27","bob27", "Dominguez Hills, ", "272-727-2727", "Laptop27", "Password",
+"App", "Location", "Facial Recognition", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user28","password28","bob28", "Dominguez Hills, ", "282-828-2828", "Laptop28", "Password",
+"App", "Location", "Fingerprint scan", "null");
+insert into Account(Username, PassWrd, RealName, Address, PhoneNumber, Device,
+ Authentication1, Authentication2, Authentication3, Authentication4, Authentication5)
+	values("user29","password29","bob29", "Dominguez Hills, ", "292-929-2929", "Laptop29", "Password",
+"App", "Location", "Fingerprint scan", "Facial Recognition");
+
