@@ -1,0 +1,53 @@
+create table Hacker(
+	HackerName varchar(40) not null,
+    Access1 varchar(40) not null,
+    Access2 varchar(40) not null,
+    Access3 varchar(40) not null,
+    
+    
+    constraint primary key(HackerName)
+);
+
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker1", "Password", "null", "null");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker2", "Password", "SMS", "null");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker3", "Password", "App", "null");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker4", "Password", "SMS", "App");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker5", "Password", "App", "Facial Recognition");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker6", "Password", "App", "Fingerprint Scan");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker7", "Password", "App", "Location");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker8", "Password", "App", "DeviceID");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker9", "Password", "App", "Facial Recognition");
+ insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker10", "Password", "App", "Fingerprint Scan");   
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker11", "Password", "SMS", "Location");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker12", "Password", "SMS", "DeviceID");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker13", "Password", "SMS", "Facial Recognition");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker14", "Password", "SMS", "Fingerprint Scan");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker15", "Password", "Stolen Device", "null");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker16", "Password", "Stolen Device", "Facial Recognition");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker17", "Password", "Stolen Device", "Fingerprint Scan");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker18", "Password", "Biometrics", "null");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker19", "Password", "SMS & App", "Biometrics");
+insert into Hacker(HackerName, Access1, Access2, Access3)
+	values("Hacker20", "Password", "Stolen Device", "Biometrics");
+    
+    
+    
