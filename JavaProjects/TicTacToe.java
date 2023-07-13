@@ -290,7 +290,7 @@ public class TicTacToe{
     for(int x = 0; x<3; x++){
       if(board[0][x] == a){
         if(board[1][x] == a){
-          if(board[1][x] == a){
+          if(board[2][x] == a){
             return true;
           }
         }
