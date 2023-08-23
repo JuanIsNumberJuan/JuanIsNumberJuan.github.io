@@ -38,10 +38,10 @@ public class SeniorDesign{
         {
           Class.forName("com.mysql.cj.jdbc.Driver");
 
-        String userName = "root";
-        String password = "Mimikyu815$";
-        String url = "jdbc:mysql://localhost:3306/SeniorDesign";
-        String url2 = "jdbc:mysql://localhost:3306/SeniorDesign?autoReconnect=true&useSSL=false";
+        String userName = "";
+        String password = "";
+        String url = "";
+        String url2 = "";
         //conn = DriverManager.getConnection(url,userName,password);
         conn = DriverManager.getConnection(url2, userName, password);
 
